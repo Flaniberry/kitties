@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rate A Kitty!</title>
+</head>
+<body>
+  <h1>Tell Gabrielle What You Think of a Kitty</h1>
+
+<form action="mailto:flaniberry@gmail.com?subject=My Kitty Rating!" method="POST" enctype="text/plain" name="EmailForm" style="width: 300px;"  target="_blank">
+  <strong>Your Name:</strong> <br>
+  <input type="text" size="19" name="Contact-Name"><br><br>
+
+  <strong>Kitty:</strong> <br>
+  <input type="radio" id="tolstoy" name="kitty" value="Tolstoy Ornery Cat">
+  <label for="html">Tolstoy Ornery Cat</label><br>
+  <input type="radio" id="galadriel" name="kitty" value="Galadriel Fat Cat">
+  <label for="css">Galadriel Fat Cat</label><br>
+  <input type="radio" id="circe" name="kitty" value="Circe Bad Cat">
+  <label for="html">Circe Bad Cat</label><br>
+  <input type="radio" id="sam" name="kitty" value="Sam Grouchy Cat">
+  <label for="css">Sam Grouchy Cat</label><br>
+  <br>
+
+  <strong>Do you like this kitty?</strong> 
+  <input type="checkbox" id="like_kittyy" name="like_kittyy" value="like_kittyy"> <br><br>
+
+  <strong>Your thoughts on this kitty:</strong> <br>
+  <textarea name="Contact-Message"  rows="6" style="width: 300px;"></textarea><br><br>
+
+  <button type="submit" value="Submit">Send</button>
+</form>
+<br>
+<a style="font-size: 15px" href="index.html">Home</a>
+
+</body>
+</html>
