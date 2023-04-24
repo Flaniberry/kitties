@@ -1,0 +1,98 @@
+/* * {
+  margin: 0;
+} */
+body{
+  margin: 0;
+}
+thead{
+  font-size: 25px;
+}
+tbody{
+  font-size: 20px;
+}
+h1{
+  font-size: 30px;
+  /* position: absolute; */
+  top: 0px;
+  /* position: fixed;
+  top: 0px;
+  left: 10px; */
+}
+.titleBar{
+  display: block;
+  background-color: black;
+  height: 20px;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+}
+/* .titleItems{
+  color: white;
+  margin-left: 20px;
+} */
+.titleItems>a:link, .titleItems>a:visited{
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.belowTitle{
+  display: block;
+  position: absolute;
+  top: 50px;
+  margin-left: 20px;
+}
+
+#body-index {
+  background-color: rgb(183, 224, 255);
+}
+#body-tolstoy {
+  background-color: #d6eefd;
+  /* float: right; */
+}
+#body-galadriel {
+  background-color: #ffe2f5;
+}
+#body-circe {
+  background-color: rgb(247, 224, 255);
+}
+#body-sam {
+  background-color:rgb(219, 255, 252);
+}
+#body-zzz {
+  background-color: rgb(255, 255, 255);
+}
+
+#body-zzz {
+  margin: 0px;
+  /* margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px; */
+}
+
+#png_sam {
+  width: 2in;
+  height: 2in;
+}
+
+.kitty-pic {
+  border-radius: 100%;
+  border: 5px solid rgb(16, 0, 240);
+  float: right;
+}
+.traits{
+  border: 1px solid black;
+}
+.page-bottom {
+  font-size: 16pt;
+}
+#div-zzz {
+  background-color: #E4F9F5;
+}
+
+/* .pic-on-pages{
+  float: right;
+} */
