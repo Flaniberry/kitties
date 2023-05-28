@@ -1,82 +1,44 @@
-/* * {
-  margin: 0;
-} */
+* {
+  font-family: 'Times New Roman', Times, serif;
+  /* margin: 0; */
+}
 body{
-  margin: 0;
-}
-thead{
-  font-size: 25px;
-}
-tbody{
-  font-size: 20px;
-}
-h1{
-  font-size: 30px;
-  /* position: absolute; */
-  top: 0px;
-  /* position: fixed;
-  top: 0px;
-  left: 10px; */
-}
-.titleBar{
-  display: block;
-  background-color: black;
-  height: 20px;
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  z-index: 100;
-}
-/* .titleItems{
-  color: white;
-  margin-left: 20px;
-} */
-.titleItems>a:link, .titleItems>a:visited{
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
+  max-width: 1000px;
+  /* margin-left: 20px; */
+  /* margin: 0; */
 }
 
-.belowTitle{
-  display: block;
-  position: absolute;
-  top: 50px;
-  margin-left: 20px;
-}
 
-#body-index {
+.rate-color {
+  background-color: white;
+}
+.index-color {
   background-color: rgb(183, 224, 255);
 }
-#body-tolstoy {
-  background-color: #d6eefd;
-  /* float: right; */
-}
-#body-galadriel {
+
+.galadriel-color {
   background-color: #ffe2f5;
 }
-#body-circe {
+.circe-color {
   background-color: rgb(247, 224, 255);
 }
-#body-sam {
+.sam-color {
   background-color:rgb(219, 255, 252);
 }
-#body-zzz {
-  background-color: rgb(255, 255, 255);
+.quazyquat-color, .tolstoy-color{
+  background-color: #d6eefd;
 }
 
-#body-zzz {
-  margin: 0px;
-  /* margin-bottom: 0px;
-  margin-right: 0px;
-  margin-left: 0px; */
+
+.navbar{
+  padding: 0;
 }
 
-#png_sam {
-  width: 2in;
-  height: 2in;
+.nav-item{
+  font-size: 1.1rem;
 }
+
+
 
 .kitty-pic {
   border-radius: 100%;
@@ -86,13 +48,86 @@ h1{
 .traits{
   border: 1px solid black;
 }
-.page-bottom {
-  font-size: 16pt;
+
+
+
+#kitty-name{
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+  font-size: 2rem;
+  justify-content: center;
+  width: 250px; /* fl wants these fixed */
+  margin-bottom: 2vh;
+  margin-left: 20px;
+  padding-top: 80px;
 }
-#div-zzz {
-  background-color: #E4F9F5;
+#kitty-name>div{
+  font-weight: bold;
+  text-align: center;
+}
+#kitty-description{
+  /* margin-left: 20px;
+  margin-right: 20px; */
+  margin: 0 20px;
+}
+.pic-on-pages {
+  height: 250px; /* fl wants these fixed */
+  width: 250px;
+  float: left;
+  margin-right: 1vw;
+  /* margin: 3vh; */
+}
+#kitty-para{
+  font-size: 1.25rem;
+  
 }
 
-/* .pic-on-pages{
-  float: right;
-} */
+
+
+#big-container{
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  /* margin-bottom: 10vh;
+  margin-left: 20px;
+  margin-right: 20px; */
+  margin: 0 20px 10vh;
+}
+
+.col-container{
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+  /* border: 2px solid red; */
+  padding: 1px;
+  flex: 1 1 12.5rem;
+}
+
+.col-header{
+  font-size: 1.55rem;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid black;
+  padding: 2px;
+}
+.col-items{
+  font-size: 1.25rem;
+  border: 1px solid black;
+  height: 100%;
+}
+
+
+
+@media (max-width: 680px) {
+  #big-container{
+    flex-direction: column;
+    /* align-items: center; */
+  }
+  .titleItems{
+    font-size: 0.8rem;
+  }
+}
+
+
