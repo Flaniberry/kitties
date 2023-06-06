@@ -4,6 +4,7 @@
 }
 body{
   max-width: 1000px;
+  height: 100vh;
   /* margin-left: 20px; */
   /* margin: 0; */
 }
@@ -40,11 +41,7 @@ body{
 
 
 
-.kitty-pic {
-  border-radius: 100%;
-  border: 5px solid rgb(16, 0, 240);
-  float: right;
-}
+
 .traits{
   border: 1px solid black;
 }
@@ -79,8 +76,7 @@ body{
   /* margin: 3vh; */
 }
 #kitty-para{
-  font-size: 1.25rem;
-  
+  font-size: 1.25rem;  
 }
 
 
@@ -89,18 +85,13 @@ body{
   display: flex;
   justify-content: space-evenly;
   border: 1px solid black;
-  /* margin-bottom: 10vh;
-  margin-left: 20px;
-  margin-right: 20px; */
   margin: 0 20px 10vh;
 }
 
 .col-container{
   display: flex;
   flex-direction: column;
-
   gap: 1px;
-  /* border: 2px solid red; */
   padding: 1px;
   flex: 1 1 12.5rem;
 }
@@ -118,11 +109,28 @@ body{
   height: 100%;
 }
 
+#index-kitty-pix{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 10px;
+  flex-wrap: wrap;
+  max-width: 615px;
+}
+
+.index-kitty-pic {
+  border-radius: 100%;
+  border: 5px solid rgb(16, 0, 240);
+  float: right;
+  height: 275px;
+  width: 275px;
+  margin: 10px;
+}
 
 
 @media (max-width: 680px) {
   #big-container{
-    flex-direction: column;
+    flex-direction: row;
     /* align-items: center; */
   }
   .titleItems{
@@ -130,4 +138,10 @@ body{
   }
 }
 
+@media (max-width: 600px) {
+  #index-kitty-pix{
+    justify-content: center;
+    /* align-items: center; */
+  }
 
+}
