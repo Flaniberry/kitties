@@ -85,7 +85,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   border: 1px solid black;
-  margin: 0 20px 10vh;
+  margin: 0 20px 10px;
 }
 
 .col-container{
@@ -126,12 +126,15 @@ body{
   width: 275px;
   margin: 10px;
 }
+#bottom-of-page-for-spacing{
+  height: 10px;
+}
 
 
 @media (max-width: 680px) {
+  /* 3 boxes of data. align in one column  */
   #big-container{
-    flex-direction: row;
-    /* align-items: center; */
+    flex-direction: column;
   }
   .titleItems{
     font-size: 0.8rem;
@@ -139,9 +142,8 @@ body{
 }
 
 @media (max-width: 600px) {
+  /* pictures of 4 kitties on index page  */
   #index-kitty-pix{
     justify-content: center;
-    /* align-items: center; */
   }
-
 }
