@@ -21,44 +21,57 @@ nav{
   font-size: 1.1rem;
 }
 
-#main_block {
+#main-block {
   text-align: center;
   padding-top: 80px;
 }
 
-#main_block>div{
+#main-block>div{
   margin-bottom: 10px;
 }
 
-#text_boxes{
+#text-boxes{
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 5px;
 }
 
-.text_box{
+.text-box{
   width: 300px;
   margin: 5px;
   resize: none;
+  padding: 6px;
+  padding-right: 15px;
 }
-#blue-arrow{
-  height: 40px;
+#txtOutput {
+  background-color: rgb(236, 236, 236);
 }
-#clipboard{
+
+/* fixes odd bug */
+/* make the divs holding the text boxes and icons the same size as the textboxes */
+.enclosing-div{
+  width: 320px;
+  height: 168px;
+}
+
+.icons{
   height: 15px;
   position: relative;
-  top: -137px;
-  right: 28px;
+  top: -172px;
+  right: -140px;
+}
+
+#blue-arrow {
+  height: 40px;
 }
 
 @media (max-width: 680px) {
-  #text_boxes {
+  #text-boxes {
     flex-direction: column;
   }
   #blue-arrow {
     transform: rotate(90deg);
-
   }
 
 }
