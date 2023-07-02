@@ -47,9 +47,23 @@ clipboard.addEventListener('click', (e) => {
 // erase text from first text area
 eraser.addEventListener('click', (e) => {
   txtInput.value = '';
+  txtOutput.value = '';
+  disOrEnableButtons();
 });
 
+function disOrEnableButtons() {
+  if (txtInput.value === '') {
+    btnEncode.setAttribute('disabled', '');
+    btnDecode.setAttribute('disabled', '');
+  } else {
+    btnEncode.removeAttribute('disabled');
+    btnDecode.removeAttribute('disabled');
+  }
+}
+
+// disable buttons if input is empty
 // clear output every time there is an edit to input
 txtInput.addEventListener('input', (e) => {
   txtOutput.value = '';
+  disOrEnableButtons();
 });
