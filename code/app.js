@@ -39,16 +39,24 @@ btnDecode.addEventListener('click', (e) => {
   codeBtnHelper(26 - offsetForLetters);
 });
 
-// copy output text to clipboard
-clipboard.addEventListener('click', (e) => {
-  navigator.clipboard.writeText(txtOutput.value);
-});
-
 // erase text from first text area
 eraser.addEventListener('click', (e) => {
   txtInput.value = '';
   txtOutput.value = '';
   disOrEnableButtons();
+  txtInput.select();
+});
+
+// copy output text to clipboard and flash border to provide feedback
+clipboard.addEventListener('click', (e) => {
+  if (txtOutput.value === '') return;
+  navigator.clipboard.writeText(txtOutput.value);
+
+  // make boder flash for 1/10 second
+  txtOutput.classList.add('highlight');
+  setTimeout(() => {
+    txtOutput.classList.remove('highlight');
+  }, 100);
 });
 
 function disOrEnableButtons() {
@@ -67,3 +75,17 @@ txtInput.addEventListener('input', (e) => {
   txtOutput.value = '';
   disOrEnableButtons();
 });
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function () {
+    txtInput.select();
+  },
+  false
+);
+
+//flash blue border around output box to indicte copy
+// txtOutput.classList.add('highlight');
+// setTimeout(() => {
+//   txtOutput.classList.remove('highlight');
+// }, 100);

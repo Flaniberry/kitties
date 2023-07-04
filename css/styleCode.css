@@ -42,11 +42,22 @@ nav{
   margin: 5px;
   resize: none;
   padding: 6px;
-  padding-right: 15px;
+  padding-right: 17px;
 }
 #txtOutput {
   background-color: rgb(236, 236, 236);
 }
+.highlight{
+  border: solid 2px rgba(62, 62, 255, 0.886);
+
+}
+
+
+
+
+/*.highlight{  flash blue border to indicate copy */
+  /* border: 2px solid blue;
+} */
 
 /* fixes odd bug */
 /* make the divs holding the text boxes and icons the same size as the textboxes */
@@ -58,8 +69,8 @@ nav{
 .icons{
   height: 15px;
   position: relative;
-  top: -172px;
-  right: -140px;
+  top: -170px;
+  right: -138px;
 }
 
 #blue-arrow {
