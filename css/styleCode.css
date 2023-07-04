@@ -45,7 +45,8 @@ nav{
   padding-right: 17px;
 }
 #txtOutput {
-  background-color: rgb(236, 236, 236);
+  /* background-color: rgb(236, 236, 236); */
+  color: black;
 }
 .highlight{
   border: solid 2px rgba(62, 62, 255, 0.886);
