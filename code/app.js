@@ -1,42 +1,73 @@
 'use strict';
 
-const btnEncode = document.querySelector('#btnEncode');
-const btnDecode = document.querySelector('#btnDecode');
+const btnEncrypt = document.querySelector('#btnEncrypt');
+const btnDecrypt = document.querySelector('#btnDecrypt');
 const txtInput = document.querySelector('#txtInput');
 const txtOutput = document.querySelector('#txtOutput');
 const clipboard = document.querySelector('#clipboard');
 const eraser = document.querySelector('#eraser');
-const offsetForLetters = 19; // num between 0 (no change) and 25
+const codebook = [
+  'f',
+  'd',
+  'y',
+  'h',
+  'l',
+  't',
+  'p',
+  'a',
+  'x',
+  'b',
+  'z',
+  'i',
+  'q',
+  'g',
+  'n',
+  'v',
+  'j',
+  'u',
+  'c',
+  'o',
+  'r',
+  'k',
+  'e',
+  'w',
+  'x',
+  'm',
+];
 
 // 65 - 90  A to Z
 // 97 - 122 a to z
-// receives a letter (upper or lower case) and returns an offset letter (must be between zero and 25)
-function enOrDeCodeChar(c, offset) {
-  const asciiVal = c.charCodeAt(0);
-  let newAsciiVal;
-  if ('A' <= c && c <= 'Z') newAsciiVal = ((asciiVal + offset - 65) % 26) + 65;
-  // lowercase letter
-  else newAsciiVal = ((asciiVal + offset - 97) % 26) + 97;
+// receives a letter (upper or lower case) and the corresponding letter from codebook
+function enOrDecryptChar(c, encrypt) {
+  // first make all chars lowercase
+  if ('A' <= c && c <= 'Z') c = c.toLowerCase();
 
-  return String.fromCharCode(newAsciiVal);
+  if (encrypt) return codebook[c.charCodeAt(0) - 97];
+  else return String.fromCharCode(codebook.indexOf(c) + 97);
+  //   return String.fromCharCode(newAsciiVal);
 }
 
-function codeBtnHelper(offset) {
+function codeBtnHelper(encrypt) {
+  let inputText = txtInput.value;
+  // if encoding and last char is a period, strip final period first
+  if (encrypt && inputText.charAt(inputText.length - 1) === '.')
+    inputText = inputText.substring(0, inputText.length - 1);
+
   txtOutput.value = '';
-  for (const c of txtInput.value) {
+  for (const c of inputText) {
     if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
-      txtOutput.value = enOrDeCodeChar(c, offset) + txtOutput.value;
+      txtOutput.value = enOrDecryptChar(c, encrypt) + txtOutput.value;
     else txtOutput.value = c + txtOutput.value;
   }
 }
 
-btnEncode.addEventListener('click', (e) => {
-  codeBtnHelper(offsetForLetters);
+btnEncrypt.addEventListener('click', (e) => {
+  codeBtnHelper(true);
 });
 
-// to decode reverse the offset: 26-offset
-btnDecode.addEventListener('click', (e) => {
-  codeBtnHelper(26 - offsetForLetters);
+// to decrypt reverse the offset: 26-offset
+btnDecrypt.addEventListener('click', (e) => {
+  codeBtnHelper(false);
 });
 
 // erase text from first text area
@@ -61,11 +92,11 @@ clipboard.addEventListener('click', (e) => {
 
 function disOrEnableButtons() {
   if (txtInput.value === '') {
-    btnEncode.setAttribute('disabled', '');
-    btnDecode.setAttribute('disabled', '');
+    btnEncrypt.setAttribute('disabled', '');
+    btnDecrypt.setAttribute('disabled', '');
   } else {
-    btnEncode.removeAttribute('disabled');
-    btnDecode.removeAttribute('disabled');
+    btnEncrypt.removeAttribute('disabled');
+    btnDecrypt.removeAttribute('disabled');
   }
 }
 
@@ -77,15 +108,10 @@ txtInput.addEventListener('input', (e) => {
 });
 
 document.addEventListener(
+  // 'load',
   'DOMContentLoaded',
   function () {
     txtInput.select();
   },
   false
 );
-
-//flash blue border around output box to indicte copy
-// txtOutput.classList.add('highlight');
-// setTimeout(() => {
-//   txtOutput.classList.remove('highlight');
-// }, 100);
