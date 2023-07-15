@@ -31,7 +31,7 @@ const codebook = [
   'k',
   'e',
   'w',
-  'x',
+  's',
   'm',
 ];
 
