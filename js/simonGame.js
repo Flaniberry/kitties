@@ -1,7 +1,7 @@
 'use strict';
 
 const buttonKitties = ['tolstoy', 'circe', 'athena', 'galadriel'];
-const delayMs = 500; // how long for ech demo click
+const delayMs = 800; // how long for ech demo click
 const defaultStartCount = 1;
 
 let gamePattern = []; // random pattern of colors the user must copy
@@ -71,8 +71,16 @@ function addStepAndDemoPattern() {
 // responds to user clicking the title. Starts the game
 $('#restart-pic').on('click', function () {
   if (waiting) {
+    reset();
     setStateVariables('demoing');
     addStepAndDemoPattern();
+  }
+  if (responding) {
+    setTimeout(() => {
+      reset();
+      setStateVariables('demoing');
+      addStepAndDemoPattern();
+    }, 500);
   }
 });
 
@@ -92,10 +100,17 @@ $('.myBtn').on('click', function (e) {
     userClickNum++;
     if (userClickNum === gamePattern.length) {
       // console.log('you win');
+      setTimeout(() => {
+        new Audio('../sounds/ding.mp3').play();
+        $('body, #kitty-paw').addClass('correct-sequence');
+      }, 300);
+      setTimeout(() => {
+        $('body, #kitty-paw').removeClass('correct-sequence');
+      }, 900);
       setStateVariables('demoing');
       setTimeout(function () {
         addStepAndDemoPattern();
-      }, 1000);
+      }, 2000);
     }
   } else {
     // console.log(e);
