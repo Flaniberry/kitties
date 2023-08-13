@@ -1,7 +1,7 @@
 'use strict';
 
 const buttonKitties = ['tolstoy', 'circe', 'athena', 'galadriel'];
-const delayMs = 800; // how long for ech demo click
+const delayMs = 2000; // how long for ech demo click
 const defaultStartCount = 1;
 
 let gamePattern = []; // random pattern of colors the user must copy
@@ -53,7 +53,7 @@ function demoPattern() {
 
     setTimeout(function () {
       $('#' + gamePattern[i]).removeClass('pressed');
-    }, i * delayMs + 200);
+    }, i * delayMs + 1000);
   }
 
   setTimeout(function () {
