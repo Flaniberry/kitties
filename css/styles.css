@@ -1,0 +1,149 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+  /* margin: 0; */
+}
+body{
+  max-width: 1000px;
+  height: 100vh;
+  /* margin-left: 20px; */
+  /* margin: 0; */
+}
+
+
+.rate-color {
+  background-color: white;
+}
+.index-color {
+  background-color: rgb(183, 224, 255);
+}
+
+.galadriel-color {
+  background-color: #ffe2f5;
+}
+.circe-color {
+  background-color: rgb(247, 224, 255);
+}
+.sam-color {
+  background-color:rgb(219, 255, 252);
+}
+.quazyquat-color, .tolstoy-color{
+  background-color: #d6eefd;
+}
+
+
+.navbar{
+  padding: 0;
+}
+
+.nav-item{
+  font-size: 1.1rem;
+}
+
+
+
+
+.traits{
+  border: 1px solid black;
+}
+
+
+
+#kitty-name{
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+  font-size: 2rem;
+  justify-content: center;
+  width: 250px; /* fl wants these fixed */
+  margin-bottom: 2vh;
+  margin-left: 20px;
+  padding-top: 80px;
+}
+#kitty-name>div{
+  font-weight: bold;
+  text-align: center;
+}
+#kitty-description{
+  /* margin-left: 20px;
+  margin-right: 20px; */
+  margin: 0 20px;
+}
+.pic-on-pages {
+  height: 250px; /* fl wants these fixed */
+  width: 250px;
+  float: left;
+  margin-right: 1vw;
+  /* margin: 3vh; */
+}
+#kitty-para{
+  font-size: 1.25rem;  
+}
+
+
+
+#big-container{
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  margin: 0 20px 10px;
+}
+
+.col-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 1px;
+  flex: 1 1 12.5rem;
+}
+
+.col-header{
+  font-size: 1.55rem;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid black;
+  padding: 2px;
+}
+.col-items{
+  font-size: 1.25rem;
+  border: 1px solid black;
+  height: 100%;
+}
+
+#index-kitty-pix{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 10px;
+  flex-wrap: wrap;
+  max-width: 615px;
+}
+
+.index-kitty-pic {
+  border-radius: 100%;
+  border: 5px solid rgb(16, 0, 240);
+  float: right;
+  height: 275px;
+  width: 275px;
+  margin: 10px;
+}
+#bottom-of-page-for-spacing{
+  height: 10px;
+}
+
+
+@media (max-width: 680px) {
+  /* 3 boxes of data. align in one column  */
+  #big-container{
+    flex-direction: column;
+  }
+  .titleItems{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* pictures of 4 kitties on index page  */
+  #index-kitty-pix{
+    justify-content: center;
+  }
+}

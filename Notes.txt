@@ -1,0 +1,4 @@
+DONE: Index page display is all messed up (fixed?)
+DONE: Phone display of kitty pages: border around 3 boxes is too big (fixed?)
+DONE: Add patty cake mp4
+Expect on entry to secret code page, txtInput box is selected and ready to receive text. Problem is that, while the txtInput is selected the keyboard is not displayed. See: https://stackoverflow.com/questions/6837543/show-virtual-keyboard-on-mobile-phones-in-javascript
