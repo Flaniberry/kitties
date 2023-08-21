@@ -108,11 +108,12 @@ background-color: rgb(115, 95, 115);
 }
 
 
-.correct-sequence {
+/* need #body to override color defined in style section of head in html */
+#body.correct-sequence {
   background-color: green;
   opacity: 0.8;
 }
-.game-over {
+#body.game-over {
   background-color: red;
   opacity: 0.8;
 }
