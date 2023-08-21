@@ -1,0 +1,36 @@
+/* body{
+
+} */
+
+/* 3 nav bar stylings. Use id #navbar to override bootstrap CSS */
+#navbar {
+  position: fixed;
+  width: 100vw;
+  padding: 0;
+  z-index: 1000;
+  /* always on top */
+  /* background-color set by receiving html page. Same as that page's background-color (via .page-color) */
+}
+
+.container-fluid {
+  background-color: #00000029;
+  /* partly transparent black */
+  /* transparent black color overlays gray on background of the navbar which is the same color as the body*/
+  /* Can't put this propeerety on navbar itself because that needs to be fully opaque and the same color as the receiving page */
+}
+
+.nav-link{
+  font-size: 1.1rem;
+  /* need to force navbar text to be black because it varies unpredictably. Links are still responsive to hover  */
+  color: black;
+}
+
+#footer-text{
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+#heart{
+  color: red;
+}

@@ -27,67 +27,65 @@
       });
     </script>
 
-    <!-- include my secret code stylesheet -->
-    <link rel="stylesheet" href="..\css\styleSecretCode.css" />
+    <!-- include my standard stylesheet -->
+    <link rel="stylesheet" href="..\css\styles.css" />
     <!-- include kitty icon for title bar -->
     <link rel="icon" href="..\images\kitty_icon.ico" />
 
     <!-- included style here because we need to set each page's color individually. Thru css was a mess -->
     <style>
       .page-color {
-        background-color: #9af3a4;
+        background-color: rgb(183, 224, 255);
       }
     </style>
 
-    <title>Secret Code!</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/kitty_icon.ico" />
+    <title>The Kitties of Cuteness</title>
   </head>
-
   <body class="page-color">
     <!-- pull in standard header -->
     <div id="header"></div>
 
-    <div id="main-block">
-      <img src="..\images\spy-kitty.png" alt="spy kitty" id="spy-kitty" />
-      <div>
-        <h1>Secret Code Page!</h1>
-      </div>
-      <div>
-        <button disabled class="btn btn-primary" id="btnEncrypt">
-          Encrypt
-        </button>
-        <button disabled class="btn btn-primary" id="btnDecrypt">
-          Decrypt
-        </button>
-      </div>
-      <div id="text-boxes">
-        <div class="enclosing-div">
-          <textarea rows="6" class="text-box" id="txtInput"></textarea>
-          <img
-            src="..\images\eraser.png"
-            class="icons"
-            id="eraser"
-            alt="eraser"
-          />
-        </div>
-        <img src="..\images\arrow_icon.png" id="blue-arrow" alt="Arrow" />
-        <div class="enclosing-div">
-          <textarea
-            readonly
-            rows="6"
-            class="text-box"
-            id="txtOutput"
-          ></textarea>
-          <img
-            src="..\images\clipboard.png"
-            class="icons"
-            id="clipboard"
-            alt="clipboard"
-          />
-        </div>
-      </div>
-    </div>
+    <h1 id="main-header">Click a Kitty!</h1>
 
-    <div id="bottom-of-page-for-spacing"></div>
+    <div id="index-kitty-pix">
+      <a href="tolstoy.html">
+        <img
+          src="..\images\tolstoy_kitten.png"
+          alt="Tolstoy Ornery Cat"
+          title="Tolstoy Ornery Cat"
+          class="index-kitty-pic"
+        />
+      </a>
+
+      <a href="circe.html">
+        <img
+          src="..\images\circe_kitten.png"
+          alt="Circe Bad Cat"
+          title="Circe Bad Cat"
+          class="index-kitty-pic"
+        />
+      </a>
+
+      <a href="galadriel.html">
+        <img
+          src="..\images\galadriel_kitten.png"
+          alt="Galadriel Fat Cat"
+          title="Galadriel Fat Cat"
+          class="index-kitty-pic"
+        />
+      </a>
+
+      <a href="sam.html">
+        <img
+          src="..\images\sam_kitten.png"
+          alt="Sam Grouchy Cat"
+          title="Sam Grouchy Cat"
+          class="index-kitty-pic"
+        />
+      </a>
+    </div>
 
     <!-- pull in standard footer -->
     <div id="footer"></div>
@@ -98,8 +96,5 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-
-    <!-- JS LINK to my own js  -->
-    <script src="../js/secretCode.js"></script>
   </body>
 </html>

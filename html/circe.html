@@ -3,106 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Circe: Bad Cat</title>
+
+    <!-- BOOTSTRAP CSS. First include bootstrap css file. BS JS at bottom of body. v5.3 pulled 23-08 -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
 
+    <!-- JQUERY. Latest v3.7 pulled 23-08. Need in head to load header and footer stub files below -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- LOAD STANDARD HEADER AND FOOTER STUB FILES -->
+    <script>
+      $(function () {
+        $('#header').load('0_header.html');
+        $('#footer').load('0_footer.html');
+      });
+    </script>
+
+    <!-- include my standard stylesheet -->
     <link rel="stylesheet" href="..\css\styles.css" />
+    <!-- include kitty icon for title bar -->
     <link rel="icon" href="..\images\kitty_icon.ico" />
+
+    <!-- included style here because we need to set each page's color individually. Thru css was a mess -->
+    <style>
+      .page-color {
+        background-color: rgb(247, 224, 255);
+      }
+    </style>
+
+    <title>Circe: Bad Cat</title>
   </head>
 
-  <body class="circe-color">
-    <nav
-      class="navbar navbar-expand-sm circe-color"
-      style="position: fixed; width: 100vw"
-    >
-      <div class="container-fluid" style="background-color: #00000029">
-        <a class="navbar-brand" href="..\index.html">
-          <img src="..\images\logo.png" alt="Bootstrap" width="150" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="..\index.html"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle active"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Choose a Kitty
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="..\html\tolstoy.html"
-                    >Tolstoy</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="..\html\circe.html">Circe</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="..\html\galadriel.html"
-                    >Galadriel</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="..\html\sam.html">Sam</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle active"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Games
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="simonGame.html">Simon</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                href="..\html\rate_kitty_via_email.html"
-                >Rate a Kitty</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <body class="page-color">
+    <!-- pull in standard header -->
+    <div id="header"></div>
 
     <div id="kitty-name">
       <div>Circe Bad Cat</div>
@@ -134,8 +76,7 @@
       </div>
     </div>
 
-    <hr />
-    <div id="big-container">
+    <div id="grid-of-traits">
       <div class="col-container">
         <div class="col-header">Education</div>
         <div class="col-items">
@@ -171,6 +112,10 @@
     </div>
     <div id="bottom-of-page-for-spacing"></div>
 
+    <!-- pull in standard footer -->
+    <div id="footer"></div>
+
+    <!-- BOOTSTRAP JS. v5.3 pulled 23-08 -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
