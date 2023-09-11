@@ -17,9 +17,9 @@ function isMobileDevice() {
 // prefs not settings. These are only changed by direct edit. Treat as const
 const prefs = {
   prefBallDiameterPCofCanvas: 8,
-  prefBallSpeed: 1,
+  prefBallSpeed: 6,
   // prefPaddleWidth: 400,
-  prefPaddleWidthPCofCanvas: 20,
+  prefPaddleWidthPCofCanvas: 15,
 };
 const state = {
   // Need to save the ball dx and dy here and execute after settings panel closes
