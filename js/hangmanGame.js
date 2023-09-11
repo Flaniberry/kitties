@@ -22,6 +22,7 @@ let selectedWord;
 const correctLetters = [];
 const wrongLetters = [];
 function resetGame() {
+  $('#guess-input').val(''); //$('#shares').val('');
   selectedWord = words[Math.floor(Math.random() * words.length)];
   correctLetters.length = 0;
   wrongLetters.length = 0;
@@ -61,12 +62,8 @@ displayWord();
 // *******************************************
 // ********** EVENT HANDLERS *****************
 // *******************************************
-// respond to left and right arrow keys
-// $('body').on('keydown', (e) => {
-//   if (e.key === 'ArrowLeft') paddle.dx = -paddle.speed;
-//   if (e.key === 'ArrowRight') paddle.dx = paddle.speed;
-// });
-$('body').on('keydown', (e) => {
+
+$('#guess-input').on('keydown', (e) => {
   const ignorChars =
     'alt, backspace, delete, enter, arrowleft, arrowdown, arrowup, arrowright, pagedown, pageup, capslock, tab, control'.split(
       ', '
@@ -90,7 +87,7 @@ $('body').on('keydown', (e) => {
     $('#wrong-letter-list').text($('#wrong-letter-list').text() + key);
     $('.figure-part')[wrongLetters.length - 1].classList.remove('hide');
     if (6 <= wrongLetters.length) {
-      $('#final-message').text('You lose ☹');
+      $('#final-message').text(`You lose ☹. The word was "${selectedWord}"`);
       // resetGame();
       $('#popup-container').css('display', 'flex');
     }
