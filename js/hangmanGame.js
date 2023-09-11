@@ -89,7 +89,6 @@ $('body').on('keydown', (e) => {
     $('#wrong-letter-list').text($('#wrong-letter-list').text() + key);
     $('.figure-part')[wrongLetters.length - 1].classList.remove('hide');
     if (6 <= wrongLetters.length) {
-      resetGame();
       $('#final-message').text('You lose ☹');
       $('#popup-container').css('display', 'flex');
     }
