@@ -17,7 +17,7 @@ function isMobileDevice() {
 // prefs not settings. These are only changed by direct edit. Treat as const
 const prefs = {
   prefBallDiameterPCofCanvas: 8,
-  prefBallSpeed: 6,
+  prefBallSpeed: 0,
   // prefPaddleWidth: 400,
   prefPaddleWidthPCofCanvas: 15,
 };
@@ -59,8 +59,12 @@ const paddle = {
 function setInitValues() {
   // run this first to get state.canvasMinDimension, paddle.wPCofCanvasW...
   handleWindowSizeChange();
-  if (!state.isMobile)
+  if (state.isMobile) {
+    prefs.prefBallSpeed = 2;
+  } else {
     $('#left-button, #right-button').css('visibility', 'hidden');
+    prefs.prefBallSpeed = 4;
+  }
 
   ball.dy = prefs.prefBallSpeed;
   paddle.y = canvas.height - 20; // only changes on win resize

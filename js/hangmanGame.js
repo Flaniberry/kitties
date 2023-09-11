@@ -54,7 +54,8 @@ function displayWord() {
 
 // Initial calls
 resetGame();
-if (isMobileDevice()) document.querySelector('#hidden-text-field').focus(); // show keyboard
+// if (isMobileDevice()) document.querySelector('#hidden-text-field').focus(); // show keyboard
+if (isMobileDevice()) $('#guess-input-container').addClass('mobile'); // show keyboard
 displayWord();
 
 // *******************************************
@@ -90,6 +91,7 @@ $('body').on('keydown', (e) => {
     $('.figure-part')[wrongLetters.length - 1].classList.remove('hide');
     if (6 <= wrongLetters.length) {
       $('#final-message').text('You lose ☹');
+      // resetGame();
       $('#popup-container').css('display', 'flex');
     }
   }
