@@ -47,7 +47,6 @@
     <!-- <div id="below-nav"> -->
     <div id="title">
       <h1>Hangman</h1>
-      <p>Find the hidden word - Enter a letter</p>
     </div>
     <div id="game-container">
       <svg id="figure-container">
@@ -69,11 +68,14 @@
         <line x1="105" y1="150" x2="125" y2="170" class="figure-part" />
       </svg>
 
-      <div id="wrong-letters-container">
-        <div id="wrong-letters">
-          <p>Wrong Letters:</p>
-          <span id="wrong-letter-list"></span>
-        </div>
+      <div id="wrong-letters-container" class="letters-containers">
+        <p>Wrong Letters:</p>
+        <span id="wrong-letter-list"></span>
+      </div>
+
+      <div id="guess-input-container" class="letters-containers">
+        <p>Guesses:</p>
+        <input type="text" id="guess-input" value="" />
       </div>
 
       <div id="word">
@@ -102,7 +104,7 @@
     <div id="footer"></div>
 
     <!-- to take focus on mobole platforms so keyboard comes up -->
-    <input type="text" id="hidden-text-field" value="test" />
+    <!-- <input type="text" id="hidden-text-field" value="test" /> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
