@@ -22,10 +22,10 @@ body {
 */
 
 /* responsive: font-size */
-h1 {
+/* h1 {
   color: rgb(255, 0, 0);
   border: orange solid 2px;
-}
+} */
 
 #canvas-container {
   display: flex;
