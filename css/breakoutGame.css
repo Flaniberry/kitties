@@ -1,0 +1,89 @@
+/* * {
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+} */
+body {
+  max-width: 1000px;
+  width: 100vw;
+  border: red solid 2px;
+  overflow: hidden;
+}
+
+#top-row {
+  margin: 70px 20px 0px;
+}
+
+#top-row,
+#bottom-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+*/
+
+/* responsive: font-size */
+h1 {
+  color: white;
+}
+
+#canvas-container {
+  display: flex;
+  max-width: 1000px;
+  width: 100vw;
+  justify-content: center;
+  border: orange solid 2px;
+}
+canvas {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  border: green solid 2px;
+}
+
+/* format both panels */
+.myPanels {
+  position: absolute;
+  top: 62px;
+  left: 0;
+  width: 300px;
+  background-color: #333;
+  color: white;
+  height: calc(
+    100vh - 62px
+  ); /* viewport height minus the height of the navbar */
+  padding: 20px;
+  line-height: 1.5;
+  transform: translateX(-400px);
+  transition: transform 1s ease-in-out;
+}
+
+.myPanels.show {
+  transform: translateX(0);
+  transition: transform 1s ease-in-out;
+  visibility: visible;
+}
+
+#footer {
+  margin-top: 10px;
+}
+
+/* media adjustments for screen orientation */
+@media (orientation: landscape) {
+  h1 {
+    font-size: calc(20px + 3vh);
+  }
+  #rules-icon,
+  #settings-icon {
+    height: calc(20px + 3vh);
+  }
+}
+
+@media (orientation: portrait) {
+  h1 {
+    font-size: calc(20px + 3vw);
+  }
+  #rules-icon,
+  #settings-icon {
+    height: calc(20px + 3vw);
+  }
+}

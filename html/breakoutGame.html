@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.41, maximum-scale=1"
+    /> -->
+
+    <!-- include jQuery; must come before bootstrap. 3.7 is latest 23-08 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- use jQuery to include standard headers and footers -->
+    <script>
+      $(function () {
+        $('#header').load('00_header.html');
+        $('#footer').load('01_footer.html');
+      });
+    </script>
+
+    <!-- testing a utility script -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/is_js@0.9.0/dist/is.min.js"></script> -->
+
+    <!-- include bootstrap from Bootstrap home 23-08 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- include my standard stylesheet -->
+    <link rel="stylesheet" href="..\css\breakoutGame.css" />
+    <!-- include kitty icon for title bar -->
+    <link rel="icon" href="..\images\kitty_icon.ico" />
+
+    <!-- included style here because we need to set each page's color individually. Thru css was a mess -->
+    <style>
+      .page-color {
+        background-color: #0095dd;
+        /* background-color: #bce4f9; */
+      }
+    </style>
+
+    <title>Breakout!</title>
+  </head>
+  <body class="page-color">
+    <!-- pull in standard header -->
+    <div id="header"></div>
+
+    <!-- <div id="test">test</div> -->
+    <div id="top-row">
+      <!-- rules button and slideout panel -->
+      <img id="rules-icon" src="../images/readme_dark.png" alt="show rules" />
+      <div id="rules" class="myPanels">
+        <h2>How To Play:</h2>
+        <p>
+          Use your right and left keys &/or these keys that we give you to keep
+          the ball up. Those will move the paddle
+        </p>
+        <p>If you fail, all of the bricks will return</p>
+        <button id="rules-close" class="btn btn-danger">Close</button>
+      </div>
+
+      <h1>Breakout!</h1>
+      <!-- settings button and slideout panel -->
+      <img
+        id="settings-icon"
+        src="../images/settings_white.png"
+        alt="show settings"
+      />
+      <div id="settings" class="myPanels">
+        <h2>Settings:</h2>
+        <div>
+          Ball Speed
+          <input type="range" min="0" max="20" id="ballSpeedSlider" />
+          <span id="ballSpeedText">0</span>
+        </div>
+
+        <div>
+          Ball Diameter
+          <input type="range" min="1" max="90" id="ballDiameterSlider" />
+          <span id="ballDiameterText">0</span>
+        </div>
+
+        <div>
+          Paddle Width
+          <input type="range" min="1" max="100" id="paddleWidthSlider" />
+          <span id="paddleWidthText">0</span>
+        </div>
+
+        <button id="settings-close" class="btn btn-danger">Close</button>
+      </div>
+    </div>
+    <div id="canvas-container">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div id="bottom-row">
+      <button id="left-button">&lt;</button>
+      <!-- pull in standard footer -->
+      <div id="footer"></div>
+      <button id="right-button">&gt;</button>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/breakoutGame.js"></script>
+  </body>
+</html>

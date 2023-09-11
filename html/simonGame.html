@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- BOOTSTRAP CSS. First include bootstrap css file. BS JS at bottom of body. v5.3 pulled 23-08 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <!-- JQUERY. Latest v3.7 pulled 23-08. Need in head to load header and footer stub files below -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- LOAD STANDARD HEADER AND FOOTER STUB FILES -->
+    <script>
+      $(function () {
+        $('#header').load('00_header.html');
+        $('#footer').load('01_footer.html');
+      });
+    </script>
+
+    <!-- Include weird arcade font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+
+    <!-- include my kittyClub game stylesheet -->
+    <link rel="stylesheet" href="../css/simonGame.css" />
+    <!-- include kitty icon for title bar -->
+    <link rel="icon" href="..\images\kitty_icon.ico" />
+
+    <!-- included style here because we need to set each page's color individually. Thru css was a mess -->
+    <style>
+      .page-color {
+        background-color: #171b58;
+        color: white;
+      }
+      #navbar {
+        background-color: rgba(255, 255, 255, 0.613);
+      }
+    </style>
+
+    <title>Simon Game</title>
+  </head>
+
+  <!-- need #body to override color defined instyle section in head - above  -->
+  <body class="page-color" id="body">
+    <!-- pull in standard header -->
+    <div id="header"></div>
+
+    <div class="myRow row-top">
+      <button id="rules-btn" class="btn rules-btn">Rules</button>
+      <div id="rules" class="rules">
+        <h2>How To Play:</h2>
+        <p>
+          This is a normal game of simon says, but with kitties! The computer
+          will give you a pattern, and you, the user, must copy it!
+        </p>
+        <p>
+          If you fail, your score gets reset and the pattern starts over. To get
+          started click Sammy in the lower left corner. Have fun!
+        </p>
+        <button id="close-btn" class="btn btn-danger">Close</button>
+      </div>
+
+      <div id="game-title">Simon</div>
+
+      <div id="count">0</div>
+    </div>
+
+    <div class="myRow">
+      <div type="button" id="athena" class="myBtn athena">
+        <img
+          src="..\images\athena_kitten.png"
+          alt="Athena"
+          title="Athena"
+          class="kitty-pic"
+        />
+      </div>
+      <div type="button" id="tolstoy" class="myBtn tolstoy">
+        <img
+          src="..\images\tolstoy_kitten.png"
+          alt="Tolstoy"
+          title="Tolstoy"
+          class="kitty-pic"
+        />
+      </div>
+      <img src="..\images\kitty-paw.png" alt="paw" id="kitty-paw" />
+    </div>
+
+    <div class="myRow">
+      <div type="button" id="galadriel" class="myBtn galadriel">
+        <img
+          src="..\images\galadriel_kitten.png"
+          alt="Galadriel"
+          title="Galadriel"
+          class="kitty-pic"
+        />
+      </div>
+      <div type="button" id="circe" class="myBtn circe">
+        <img
+          src="..\images\circe_kitten.png"
+          alt="Circe"
+          title="Circe"
+          class="kitty-pic"
+        />
+      </div>
+    </div>
+
+    <!-- restart section with sammy's pic and text -->
+    <div id="restart-section">
+      <img
+        src="..\images\sam_kitten.png"
+        alt="Restart"
+        title="Restart"
+        id="restart-pic"
+      />
+      <div id="restart">Restart</div>
+    </div>
+
+    <!-- pull in standard footer -->
+    <div id="footer"></div>
+
+    <!-- BOOTSTRAP JS. v5.3 pulled 23-08 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS LINK to my own js  -->
+    <script src="../js/simonGame.js"></script>
+  </body>
+</html>

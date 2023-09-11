@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- BOOTSTRAP CSS. First include bootstrap css file. BS JS at bottom of body. v5.3 pulled 23-08 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <!-- JQUERY. Latest v3.7 pulled 23-08. Need in head to load header and footer stub files below -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- LOAD STANDARD HEADER AND FOOTER STUB FILES -->
+    <script>
+      $(function () {
+        $('#header').load('00_header.html');
+        $('#footer').load('01_footer.html');
+      });
+    </script>
+
+    <!-- include my standard stylesheet -->
+    <link rel="stylesheet" href="..\css\styles.css" />
+    <!-- include kitty icon for title bar -->
+    <link rel="icon" href="..\images\kitty_icon.ico" />
+
+    <!-- included style here because we need to set each page's color individually. Thru css was a mess -->
+    <style>
+      .page-color {
+        background-color: #fbbcb8;
+      }
+    </style>
+
+    <title>Athena: Meddlesome Cat</title>
+  </head>
+
+  <body class="page-color">
+    <!-- pull in standard header -->
+    <div id="header"></div>
+
+    <!-- <div id="test-filler">test</div> -->
+
+    <div id="kitty-name">
+      <div>Athena Meddlesome Cat</div>
+      <div>
+        <!-- special styling here to keep middle star from looking like a link -->
+        ⭐⭐⭐⭐
+      </div>
+    </div>
+
+    <div id="kitty-description">
+      <img
+        src="..\images\athena_kitten.png"
+        alt="Athena Meddlesome Cat"
+        class="pic-on-pages"
+      />
+
+      <div id="kitty-para">
+        My name is Athena. I like to eat. I am a playful cat. I love fun! At one
+        point, just last night, I completely messed up the code, even though the
+        code was closed, so I used the keyboard to get the code up, and then
+        messed it up! See why I am "The Meddlesome Cat"? I love, love, love to
+        play, and my new best friend is <a href="tolstoy.html">Tolstoy</a>! He
+        didn't use to like me, but he has accepted that I am here, and has been
+        using that to have a playmate! The other cats,
+        <a href="circe.html">Circe</a>, <a href="galadriel.html">Galadriel</a>,
+        and <a href="sam.html">Sam</a>, are not very playful, no matter what I
+        do! I try and try, but they won't play.
+      </div>
+    </div>
+
+    <div id="grid-of-traits">
+      <div class="col-container">
+        <div class="col-header">Education</div>
+        <div class="col-items">
+          <ul>
+            <li>Chasing my toy!</li>
+            <li>Chasing Tolstoy.</li>
+            <li><a href="..\images\patty_cake.mp4">Playing.</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-container">
+        <div class="col-header">Hobbies</div>
+        <div class="col-items">
+          <ul>
+            <li>Squeezing in tight spaces, like boxes, shelves, etc...</li>
+            <li><a href="..\images\hungry_kitten.mp4">Eating</a></li>
+            <li>Chasing the other cats!!!!!</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-container">
+        <div class="col-header">Displeasures</div>
+        <div class="col-items">
+          <ul>
+            <li>Water spilling!</li>
+            <li>Being trapped <em>anywhere</em>!</li>
+            <li>Missing toy!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- pull in standard footer -->
+    <div id="footer"></div>
+
+    <!-- BOOTSTRAP JS. v5.3 pulled 23-08 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
