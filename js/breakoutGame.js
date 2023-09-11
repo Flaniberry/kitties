@@ -61,14 +61,16 @@ function setInitValues() {
   handleWindowSizeChange();
   if (state.isMobile) {
     prefs.prefBallSpeed = 2;
+    paddle.speed = canvas.width / 50;
   } else {
     $('#left-button, #right-button').css('visibility', 'hidden');
     prefs.prefBallSpeed = 4;
+    paddle.speed = 8;
   }
 
   ball.dy = prefs.prefBallSpeed;
   paddle.y = canvas.height - 20; // only changes on win resize
-  paddle.speed = state.isMobile ? canvas.width / 20 : 8;
+  // paddle.speed = state.isMobile ? canvas.width / 20 : 8;
 
   // ************* SLIDER VALUES ************************
   $('#ballSpeedSlider').val(Math.abs(ball.dy));
