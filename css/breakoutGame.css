@@ -13,8 +13,7 @@ body {
   margin: 70px 20px 0px;
 }
 
-#top-row,
-#bottom-row {
+#top-row {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,7 +23,8 @@ body {
 
 /* responsive: font-size */
 h1 {
-  color: white;
+  color: rgb(255, 0, 0);
+  border: orange solid 2px;
 }
 
 #canvas-container {
@@ -61,6 +61,32 @@ canvas {
   transform: translateX(0);
   transition: transform 1s ease-in-out;
   visibility: visible;
+}
+
+#bottom-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  max-width: 1000px;
+  width: 100vw;
+  bottom: 110px;
+  /* margin: 0 20px; */
+  justify-content: space-between;
+  /* transform: translateX(-15px); */
+  /* border: green solid 2px; */
+}
+
+.btns {
+  min-width: 70px;
+  min-height: 70px;
+  width: 9vw;
+  height: 9vw;
+  /* line-height: 8vh;
+  text-align: center; */
+  /* align-items: center; */
+  margin: 10px;
+  font-size: 36px;
 }
 
 #footer {

@@ -14,6 +14,7 @@ body {
   margin: 0;
   overflow: hidden;
   /* border: red solid 2px; */
+  line-height: 1;
 }
 
 #game-container {
@@ -41,7 +42,7 @@ body {
   visibility: hidden;
 }
 
-#wrong-letters-container {
+.letters-containers {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -49,13 +50,22 @@ body {
   flex-direction: column;
   text-align: right;
 }
-#wrong-letters-container p {
+.letters-containers p {
   margin: 0 0 5px;
 }
-#wrong-letters-container span {
+.letters-containers span {
   font-size: 24px;
   width: 40px;
 }
+#guess-input-container {
+  visibility: hidden;
+  top: 100px;
+  width: 120px;
+}
+#guess-input-container.mobile {
+  visibility: visible;
+}
+
 #word {
   display: flex;
   /* flex-direction: row; */
@@ -144,7 +154,7 @@ body {
 }
 
 /* hide the field to left of viewport */
-#hidden-text-field {
+/* #hidden-text-field {
   position: fixed;
   left: 120%;
-}
+} */
