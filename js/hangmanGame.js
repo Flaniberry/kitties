@@ -26,7 +26,9 @@ function resetGame() {
   selectedWord = words[Math.floor(Math.random() * words.length)];
   correctLetters.length = 0;
   wrongLetters.length = 0;
+  $('#wrong-letter-list').text('');
   $('.figure-part').addClass('hide');
+  displayWord();
 }
 
 // show correctly guessed letters in secret word
@@ -54,16 +56,15 @@ function displayWord() {
 } // displayWord()
 
 // Initial calls
+if (isMobileDevice()) $('#guess-input-container').addClass('mobile'); // show input box on mobile devices
 resetGame();
-// if (isMobileDevice()) document.querySelector('#hidden-text-field').focus(); // show keyboard
-if (isMobileDevice()) $('#guess-input-container').addClass('mobile'); // show keyboard
-displayWord();
 
 // *******************************************
 // ********** EVENT HANDLERS *****************
 // *******************************************
 
-$('#guess-input').on('keydown', (e) => {
+// #guess-input for mobile, body for PC. I think body would work for both
+$('#guess-input, body').on('keydown', (e) => {
   const ignorChars =
     'alt, backspace, delete, enter, arrowleft, arrowdown, arrowup, arrowright, pagedown, pageup, capslock, tab, control'.split(
       ', '
@@ -87,7 +88,7 @@ $('#guess-input').on('keydown', (e) => {
     $('#wrong-letter-list').text($('#wrong-letter-list').text() + key);
     $('.figure-part')[wrongLetters.length - 1].classList.remove('hide');
     if (6 <= wrongLetters.length) {
-      $('#final-message').text(`You lose ☹. The word was "${selectedWord}"`);
+      $('#final-message').html(`You lose ☹<br>The word was "${selectedWord}"`);
       // resetGame();
       $('#popup-container').css('display', 'flex');
     }
@@ -98,6 +99,4 @@ $('#guess-input').on('keydown', (e) => {
 $('#play-button').on('click', () => {
   $('#popup-container').css('display', 'none');
   resetGame();
-  $('#wrong-letter-list').text('');
-  displayWord();
 });
