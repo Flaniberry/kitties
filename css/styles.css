@@ -5,7 +5,7 @@
   font-family: 'Times New Roman', Times, serif;
 }
 /* can't put max-width in * or navbar will stop at 1000 */
-body{
+body {
   max-width: 1000px;
 }
 
@@ -13,19 +13,18 @@ body{
   KEEP: managed internally in <style> sections of each page
 } */
 
-
 /* "name" is name and stars, main-header is on main & rate pages*/
-#kitty-name, #main-header{
+#kitty-name,
+#main-header {
   /* display: flex;  why don't I need this?*/
   flex-direction: column;
-  
+
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
 
   padding-top: 70px; /* enough to clear navbar  */
 }
-
 
 /* "descripton is image and paragraph"  */
 #kitty-description {
@@ -38,7 +37,7 @@ body{
   /* 300x300 for most pages. Shring when page gets narrow */
   max-height: 300px;
   max-width: 300px;
-  height: 40vw; 
+  height: 40vw;
   width: 40vw;
 
   float: left;
@@ -47,18 +46,18 @@ body{
 }
 
 /* columns toward bottom of page */
-#grid-of-traits{
+#grid-of-traits {
   display: flex;
-  margin: 0 20px 10px;  /* top sides bottom */
+  margin: 0 20px 10px; /* top sides bottom */
 }
 /* full column in grid with both header and items boxes */
-.col-container{
+.col-container {
   flex-direction: column;
-  padding: 8px;  /* gap between lines under header */
+  padding: 8px; /* gap between lines under header */
   flex: 1 1 30vw;
 }
 /* header in grid */
-.col-header{
+.col-header {
   font-size: 1.55rem;
   font-weight: bold;
   text-align: center;
@@ -66,14 +65,12 @@ body{
   padding: 2px;
 }
 /* bulleted list in grid */
-.col-items{
+.col-items {
   font-size: 1.25rem;
 }
 
-
-
 /* only used on MAIN page: "pix" is container with all pics, "pic" is each individual kitty */
-#index-kitty-pix{
+#index-kitty-pix {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -89,17 +86,21 @@ body{
   width: 275px;
   margin: 10px;
 }
+#sammy-pic {
+  border: black 15pt solid;
+  border-radius: 100%;
+}
 
 /* Grid toward bottom of page. align in one column when width is small */
 @media (max-width: 680px) {
-  #grid-of-traits{
+  #grid-of-traits {
     flex-direction: column;
   }
 }
 
 /* MAIN page only: pictures of 4 kitties. align centered in one column when width is small */
 @media (max-width: 600px) {
-  #index-kitty-pix{
+  #index-kitty-pix {
     justify-content: center;
   }
 }
